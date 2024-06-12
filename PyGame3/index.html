@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/python/python.min.js"></script>
+</head>
+<body>
+<main>
+
+  <div id="progressBarContainer">
+    <div id="progressBar"></div>
+  </div>
+
+  <div class="container">
+
+    <div id="1" class="lessonChunk">
+
+      <div class="lesson">
+        <p>Custom Events!</p>
+
+      <div class="codeExample">
+        <code><p>game_timer = pygame.USEREVENT + 1</p></code>
+        <code><p>pygame.time.set_timer(game_timer, 1000)</p></code> 
+      </div>
+   
+        <p>This sets off a custom event to activate every second. We had to add +1 to pygame.USEREVENT to ensure we dont conflict with default events.</p>
+      </div>
+
+      <div class="answerContainer">
+        <button onclick="backButtonClicked()" class="back">Back</button>
+        <button onclick="nextButtonClicked()" class="next">Next</button>
+      </div>
+
+    </div>
+
+    <div id="2" class="lessonChunk">
+
+      <div class="lesson">
+        <p>Custom Events!</p>
+
+      <div class="codeExample">
+        <code><p>if event.type == game_timer:</p></code>
+        <code class="indent"><p>print('Test')</p></code> 
+      </div>
+   
+        <p>Now, every second, the event will fire and print 'Test'.</p>
+      </div>
+
+      <div class="answerContainer">
+        <button onclick="backButtonClicked()" class="back">Back</button>
+        <button onclick="nextButtonClicked()" class="next">Next</button>
+      </div>
+
+    </div>
+
+    <div id="3" class="lessonChunk">
+
+      <div class="lesson">
+        <h2 class="red">CHALLENGE!</h2>
+   
+        <p>Create a visible counter in the top right of the game, and increase it by 1 every second.</p>
+      </div>
+
+      <div class="answerContainer">
+        <button onclick="backButtonClicked()" class="back">Back</button>
+        <button onclick="nextButtonClicked()" class="next">Next</button>
+      </div>
+
+    </div>
+
+    <div id="4" class="lessonChunk">
+
+      <div class="lesson">
+        <p>Spawning multiple enemies (Step 1)</p>
+
+      <div class="codeExample">
+        <code><p>obstacle_rect_list = []</p></code> 
+      </div>
+
+      <p>This list is going to contain a list different positions that will change over time. We will draw enemies on the screens onto these positions.</p>
+   
+      </div>
+
+      <div class="answerContainer">
+        <button onclick="backButtonClicked()" class="back">Back</button>
+        <button onclick="nextButtonClicked()" class="next">Next</button>
+      </div>
+
+    </div>
+
+    <div id="5" class="lessonChunk">
+
+      <div class="lesson">
+        <p>Spawning multiple enemies (Step 2)</p>
+
+      <div class="codeExample">
+        <code><p>obstacle_rect_list.append(rectPosition)</p></code> 
+      </div>
+
+      <p>We will add a new position to the list somewhere in the code every certain amount of seconds to spawn enemies.</p>
+   
+      </div>
+
+      <div class="answerContainer">
+        <button onclick="backButtonClicked()" class="back">Back</button>
+        <button onclick="nextButtonClicked()" class="next">Next</button>
+      </div>
+
+    </div>
+
+    <div id="6" class="lessonChunk step-by-step">
+
+      <div class="lesson">
+        <p>Spawning multiple enemies (Step 3)</p>
+
+        <div class="step" style="display: none;">
+          <code><p>def obstacle_movement(obstacle_list):</p></code>
+          <p>Define a function to update multiple enemy positions</p>
+        </div>
+
+        <div class="step" style="display: none;">
+          <code><p>if obstacle_list:</p></code>
+          <p>First, within the function, check to see if the list exist.</p>
+        </div>
+
+        <div class="step" style="display: none;">
+          <code><p>for obstacle_rect in obstacle_list:</p></code>
+          <p>Setup the for loop to go through the enemy positions one by one.</p>
+        </div>
+
+        <div class="step" style="display: none;">
+          <code style="text-align: left"><p>obstacle_rect.x -= 5</p></code>
+          <code style="text-align: left"><p>screen.blit(enemy, obstacle_rect)</p></code>
+          <p>Shift the current enemy position to the left and then update it on the screen</p>
+        </div>
+        
+
+      <button class="nextStep">Next Step</button>
+   
+      </div>
+
+      <div class="answerContainer">
+        <button onclick="backButtonClicked()" class="back">Back</button>
+        <button onclick="nextButtonClicked()" class="next">Next</button>
+      </div>
+
+    </div>
+
+    <div id="7" class="lessonChunk">
+
+      <div class="lesson">
+       <h2 style="color: red;">Challenge!</h2>
+       <p>I want you to use the knowledge that you learned so far to spawn multiple enemies. Their starting point will all be to the very right of the screen. They will spawn at different y positions. They will all be gradually moving to the left.</p>
+      </div>
+
+      <div class="answerContainer">
+        <button onclick="backButtonClicked()" class="back">Back</button>
+        <button onclick="nextButtonClicked()" class="next">Next</button>
+      </div>
+
+    </div>
+
+    <div id="8" class="lessonChunk">
+
+      <div class="lesson">
+        <p><code style="font-size: 16px">image = pygame.image.load(image).convert_alpha()</code></p>
+        <p><code style="font-size: 16px">image_rect = image.get_rect(bottomright = (x, y))</code></p>
+       <p>This is how you load an image and get the rect position of it. If you dont need to maintain the transparency of an image, you can just do <code style="font-size: 16px;">.convert()</code></p>
+      </div>
+
+      <div class="answerContainer">
+        <button onclick="backButtonClicked()" class="back">Back</button>
+        <button onclick="nextButtonClicked()" class="next">Next</button>
+      </div>
+
+    </div>
+
+    <div id="9" class="lessonChunk">
+
+      <div class="lesson">
+        <h2 style='color: red;'>CHALLENGE!</h2>
+        <p>It is now up to you to create your very own game! Use all the images you want! If you want to challenge yourself, try creating a game with different levels! :D.</p>
+      </div>
+
+      <div class="answerContainer">
+        <button onclick="backButtonClicked()" class="back">Back</button>
+        <button onclick="nextButtonClicked()" class="next">Next</button>
+      </div>
+
+    </div>
+
+  
+
+  
+  </div>
+  
+
+
+
+
+
+<button style="display: none;" class="explain-button">Explain Better</button>
+
+
+
+<button style="display: none;" class="rightArrow">></button>
+<button style="display: none;" class="leftArrow"><</button>
+
+<h2></h2>
+
+<div style="display: none;" class="contentExplained">
+
+</div>
+
+<audio id="myAudio" src="Silas.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</main>
+</body>
+</html>
+  
